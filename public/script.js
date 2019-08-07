@@ -196,8 +196,14 @@ const getDiceResult = () => Math.floor(Math.random() * Math.floor(6));
 const getRandomDice = () => Math.floor(Math.random() * Math.floor(dicesStored.filter(({ show }) => show ).length));
 
 const refresh = () => {
-  if (status === 0 || dicesID.length < requiredDices) {
+  if (status === 0) {
     status = 1;
+    playButton.classList.remove('hidden');
+    playButton.classList.remove('disabled-button');
+    playButton.removeAttribute('disabled');
+    shuffleButton.classList.remove('hidden');
+    shuffleButton.classList.remove('disabled-button');
+    shuffleButton.removeAttribute('disabled');
   }
 
   if (dicesID.length === requiredDices && status === 1) {
@@ -222,7 +228,11 @@ const refresh = () => {
 
   if (status === 3) {    
     playButton.classList.add('disabled-button');
+    playButton.classList.add('hidden');
     playButton.setAttribute('disabled', '');
+    shuffleButton.classList.add('disabled-button');
+    shuffleButton.classList.add('hidden');
+    shuffleButton.setAttribute('disabled', '');
   }
 
   //console.log({ status, dicesID: JSON.parse(JSON.stringify(dicesID)) });
@@ -263,14 +273,14 @@ const goShuffle = () => {
 };
 
 const goReplay = () => {
-  status = 1;
+  status = 0;
   dicesID.length = 0;
   refresh();
 };
 
 const selectionDices = (DOMelement) => {
   const dicesString = dicesStored.reduce((dicesStoredAcc, { show, sketches, name, id }) => show ? dicesStoredAcc + `
-      <div class="dice">
+      <div class="dice ${dicesID.find(diceID => diceID === id) ? 'selected' : ''}" data-diceid="${id}">
         <div class="faces-container">${sketches.reduce((facesAcc, { sketch, style }, i) => facesAcc + `
           <div class="face" style="grid-area: face-${i}">
             <i class="material-icons" style="${style}">
@@ -279,18 +289,11 @@ const selectionDices = (DOMelement) => {
           </div>
           `, '')}  
         </div>
-        <div class="dice-footer">
-          <button class="transparent-button" title="check-button" data-diceid="${id}">
-            <i class="material-icons">
-              radio_button_${dicesID.find(diceID => diceID === id) ? 'checked' : 'unchecked'}
-            </i>
-          </button>
-        </div>
       </div>
     ` : dicesStoredAcc, '');
 
   DOMelement.innerHTML = dicesString;
-  document.querySelectorAll('button[title="check-button"]').forEach(button => button.addEventListener('click', () => toggleDice(button.getAttribute('data-diceid'))));
+  document.querySelectorAll('.dice').forEach(dice => dice.addEventListener('click', () => toggleDice(dice.getAttribute('data-diceid'))));
 }
 
 const usableDices = (DOMelement) => {
@@ -298,7 +301,7 @@ const usableDices = (DOMelement) => {
     const dice = dicesStored.find(({ id }) => id === diceID);
     const { style, sketch } = dice.sketches[getDiceResult()];
     return (dicesAcc + `
-      <div class="dice">
+      <div class="dice usable">
         <div class="face">
           <i class="material-icons" style="${style}">
             ${sketch}

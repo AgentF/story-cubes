@@ -5,13 +5,29 @@ html, body {
 }
 
 :root {
-  --sketchSize: 48px;
+  --sketchSize: 5rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.app {
+  height: 100%;
+  width: 100%;
+  background-color: #eee;
+  display: flex;  
+  justify-content: space-around;
+  align-items: center;
+  flex-flow: column nowrap;
+  transition: .5s ease-in-out all;
 }
 
 .dices-container {
-  transition: .5s ease-in-out all;
-  display: flex;
-  flex-flow: wrap;
+  max-height: calc(100% - 6rem);
+  overflow: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .dice {
@@ -20,10 +36,21 @@ html, body {
   justify-content: space-between;
   align-items: center;
   margin: 5px;
-  padding: 5px;
+  padding: 3px;
   border-radius: 5px;
   background: #333;
-  border: 1px solid #000;
+  border: 3px solid #000;
+  cursor: pointer;
+}
+
+.usable {
+  margin: 15px;
+  padding: 9px;
+  border-width: 9px;
+}
+
+.dice.selected {
+  border-color: #FFAB00;
 }
 
 .dice-name {
@@ -67,6 +94,10 @@ html, body {
   font-size: var(--sketchSize);
 }
 
+.dice.usable > .face > .material-icons {
+  font-size: calc(var(--sketchSize) * 3);
+}
+
 .dice-footer {
   display: flex;
   padding: 5px;
@@ -107,6 +138,7 @@ html, body {
 
 .next-button > i {
   color: #fff;
+  font-size: 5rem;
 }
 
 .disabled-button {
