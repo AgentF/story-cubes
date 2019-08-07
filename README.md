@@ -21,5 +21,5 @@ I choose to keep it just html, css and vanilla js as long as it works, maybe in 
   - [ ] Make some sort of dice animation.
   - [x] Implement random selection.
   - [ ] Implement a smart textarea to write the stories.
-  - [ ] Implement an export story to twitter feature to tweet your story in various separeted twits.
+  - [ ] Implement an export story to twitter feature to tweet your story in various separeted tweets.
   - [ ] Make an interface an organize the app screens.
