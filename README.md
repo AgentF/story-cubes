@@ -19,7 +19,8 @@ I choose to keep it just html, css and vanilla js as long as it works, maybe in 
   - [ ] Add to the dices collection.
   - [ ] Organize the dices collection by common themes.
   - [x] Select the dices to play.
-  - [ ] Make some sort of dice animation.
+  - [x] Make some sort of dice animation.
+  - [ ] Make the dice 3D.
   - [x] Implement random selection.
   - [ ] Implement a smart textarea to write the stories.
   - [ ] Implement an export story to twitter feature to tweet your story in various separeted tweets.
