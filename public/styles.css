@@ -1,0 +1,48 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+:root {
+  --sketchSize: 48px;
+}
+
+.dices-container {
+  display: flex;
+  flex-flow: wrap;
+}
+
+.dice {
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  background: #333;
+  display: grid;
+  place-content: center;
+  grid-template-columns: repeat(3, calc( var(--sketchSize) + 10px));
+  grid-template-rows: repeat(4, calc( var(--sketchSize) + 10px));
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  grid-template-areas: 
+    ". face-0 ."
+    "face-1 face-2 ."
+    ". face-3 face-4"
+    ". face-5 ."
+  ;
+}
+
+.face {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  background: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.face > .material-icons {
+  color: #333;
+  font-size: var(--sketchSize);
+}
