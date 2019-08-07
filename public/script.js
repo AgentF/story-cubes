@@ -1,6 +1,8 @@
-const dices = [
+const dicesStored = [
   {
-    name: 'perception/action',
+    id: 0,
+    show: true,
+    name: 'action',
     sketches: [
       {
         sketch: 'visibility',
@@ -23,6 +25,8 @@ const dices = [
     ]
   },
   {
+    id: 1,
+    show: true,
     name: 'characters',
     sketches: [
       {
@@ -46,6 +50,8 @@ const dices = [
     ]
   },
   {
+    id: 2,
+    show: true,
     name: 'powers',
     sketches: [
       {
@@ -69,6 +75,8 @@ const dices = [
     ]
   },
   {
+    id: 3,
+    show: true,
     name: 'places',
     sketches: [
       {
@@ -92,6 +100,8 @@ const dices = [
     ]
   },
   {
+    id: 4,
+    show: true,
     name: 'daily',
     sketches: [
       {
@@ -115,6 +125,8 @@ const dices = [
     ]
   },
   {
+    id: 5,
+    show: true,
     name: 'detective',
     sketches: [
       {
@@ -137,8 +149,9 @@ const dices = [
       },
     ]
   },
-  /*   
   {
+    id: 6,
+    show: false,
     name: 'characters',
     sketches: [
       {
@@ -160,20 +173,55 @@ const dices = [
         sketch: 'accessibility',
       },
     ]
-  },  
-  */
+  },
 ];
+
 const dicesContainer = document.querySelector('.dices-container');
+let dicesID = [];
+const requiredDices = 3;
+let eventsSeted = false;
+
+const refresh = () => {
+  showDices(dicesContainer);
+}
+
+const toggleDice = (id) => {
+  const check = dicesID.findIndex(diceID => `check-${diceID}` === `check-${id}`)
+  if (check === -1) {
+    dicesID.push(id);
+    if (dicesID.length > requiredDices) {
+      dicesID.shift();
+    }
+  } else {
+    dicesID = [...dicesID.slice(0, check), ...dicesID.slice(check + 1)]
+  }
+  refresh()
+}
 
 const getDiceResult = () => Math.floor(Math.random() * Math.floor(6));
 
-dicesContainer.innerHTML = dices.reduce((dices, { sketches }) => dices + `
-  <div class="dice">${sketches.reduce((faces, { sketch, style }, i) => faces + `
-    <div class="face" style="grid-area: face-${i}">
-      <i class="material-icons" style="${style}">
-        ${sketch}
-      </i>      
+const showDices = (DOMelement) => {
+  DOMelement.innerHTML = dicesStored.reduce((dicesStoredAcc, { show, sketches, name, id }) => show ? dicesStoredAcc + `
+    <div class="dice">
+      <div class="dice-name">${name}</div>
+      <div class="faces-container">${sketches.reduce((facesAcc, { sketch, style }, i) => facesAcc + `
+        <div class="face" style="grid-area: face-${i}">
+          <i class="material-icons" style="${style}">
+            ${sketch}
+          </i>      
+        </div>
+        `, '')}  
+      </div>
+      <div class="dice-footer">
+        <button class="check-button" id="check-${id}">
+          <i class="material-icons">
+            radio_button_${dicesID.find(diceID => diceID === `check-${id}`) ? 'checked' : 'unchecked'}
+          </i>
+        </button>
+      </div>
     </div>
-  `, '')}
-  </div>
-`, '');
+  ` : dicesStoredAcc, '');
+  document.querySelectorAll('.check-button').forEach(button => button.addEventListener('click', () => toggleDice(button.id)));
+}
+
+refresh();

@@ -14,10 +14,28 @@ html, body {
 }
 
 .dice {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   margin: 5px;
   padding: 5px;
   border-radius: 5px;
   background: #333;
+}
+
+.dice-name {
+  display: flex;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  background: #eee;
+  font-weight: bold;
+  color: #333;
+  text-transform: capitalize;
+}
+
+.faces-container {
   display: grid;
   place-content: center;
   grid-template-columns: repeat(3, calc( var(--sketchSize) + 10px));
@@ -45,4 +63,29 @@ html, body {
 .face > .material-icons {
   color: #333;
   font-size: var(--sketchSize);
+}
+
+.dice-footer {
+  display: flex;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  background: #eee;
+}
+
+.check-button {
+  display: flex;
+  border: none;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.check-button > i {
+  color: #333;
+}
+
+.check-button:focus {
+  outline: none;
 }
