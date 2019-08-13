@@ -6,7 +6,7 @@ This is a StoryCubes app made as a personal project, this isn't an official “R
 “Rory’s Story Cubes” is the trade mark of the Asmodee Group and all intellectual property rights in the name, trade mark and game “Rory’s Story Cubes” is the property of Asmodee Group.
 
 ## About the app
-It's working! [here](https://agentf.github.io/story-cubes/public)
+It's working! [here](https://agentf.github.io/story-cubes/)
 
 I was inspired to do an StoryCubes app when I heard of the game's idea and how that can help you stimulate your creativity and storytelling.
 

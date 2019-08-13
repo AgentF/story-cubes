@@ -1,0 +1,163 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+:root {
+  --sketchSize: 5rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.app {
+  height: 100%;
+  width: 100%;
+  background-color: #eee;
+  display: flex;  
+  justify-content: space-around;
+  align-items: center;
+  flex-flow: column nowrap;
+  transition: .5s ease-in-out all;
+}
+
+.dices-container {
+  max-height: 100%;
+  padding: 5px;
+  margin: 5px;
+  overflow: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.dice {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px;
+  padding: 3px;
+  border-radius: 5px;
+  background: #333;
+  border: 3px solid #000;
+  cursor: pointer;
+}
+
+.usable {
+  margin: 15px;
+  padding: 9px;
+  border-width: 9px;
+}
+
+.dice.selected {
+  border-color: #FFAB00;
+}
+
+.dice-name {
+  display: flex;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  background: #eee;
+  font-weight: bold;
+  color: #333;
+  text-transform: capitalize;
+}
+
+.faces-container {
+  display: grid;
+  place-content: center;
+  grid-template-columns: repeat(3, calc( var(--sketchSize) + 10px));
+  grid-template-rows: repeat(4, calc( var(--sketchSize) + 10px));
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  grid-template-areas: 
+    ". face-0 ."
+    "face-1 face-2 ."
+    ". face-3 face-4"
+    ". face-5 ."
+  ;
+}
+
+.face {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  background: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.face > .material-icons {
+  color: #333;
+  font-size: var(--sketchSize);
+}
+
+.dice.usable > .face > .material-icons {
+  font-size: calc(var(--sketchSize) * 3);
+}
+
+.dice-footer {
+  display: flex;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  background: #eee;
+}
+
+.transparent-button {
+  display: flex;
+  border: none;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.transparent-button > i {
+  color: #333;
+}
+
+.transparent-button:focus {
+  outline: none;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.action-button {
+  display: flex;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 100%;
+  background-color: #4CAF50;
+  border: 1px solid #1B5E20;
+}
+
+.action-button > i {
+  color: #fff;
+  font-size: 5rem;
+}
+
+.principal-button {
+  
+}
+
+.principal-button > i {
+  font-size: 6rem;
+}
+
+.disabled-button {
+  background-color: #333;
+  border: 1px solid #000;
+}
