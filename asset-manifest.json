@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/story-cubes/static/css/main.a617e044.chunk.css",
+    "main.js": "/story-cubes/static/js/main.ffa661cd.chunk.js",
+    "main.js.map": "/story-cubes/static/js/main.ffa661cd.chunk.js.map",
+    "runtime-main.js": "/story-cubes/static/js/runtime-main.29025dc0.js",
+    "runtime-main.js.map": "/story-cubes/static/js/runtime-main.29025dc0.js.map",
+    "static/js/2.5ca7e9ca.chunk.js": "/story-cubes/static/js/2.5ca7e9ca.chunk.js",
+    "static/js/2.5ca7e9ca.chunk.js.map": "/story-cubes/static/js/2.5ca7e9ca.chunk.js.map",
+    "static/js/3.cb362943.chunk.js": "/story-cubes/static/js/3.cb362943.chunk.js",
+    "static/js/3.cb362943.chunk.js.map": "/story-cubes/static/js/3.cb362943.chunk.js.map",
+    "index.html": "/story-cubes/index.html",
+    "static/css/main.a617e044.chunk.css.map": "/story-cubes/static/css/main.a617e044.chunk.css.map",
+    "static/js/2.5ca7e9ca.chunk.js.LICENSE.txt": "/story-cubes/static/js/2.5ca7e9ca.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/story-cubes/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.29025dc0.js",
+    "static/js/2.5ca7e9ca.chunk.js",
+    "static/css/main.a617e044.chunk.css",
+    "static/js/main.ffa661cd.chunk.js"
+  ]
+}
