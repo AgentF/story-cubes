@@ -29,14 +29,27 @@ import {
   GiFootprint,
   GiPadlock,
   GiFlame,
+  GiFlatfish,
+  GiPentarrowsTornado,
+  GiLockSpy,
+  GiFireFlower,
+  GiDramaMasks,
+  GiParachute,
+  GiRainbowStar,
+  GiWaterFountain,
+  GiCampingTent,
+  GiCandlestickPhone,
+  GiArrowhead,
+  GiScales,
 } from "react-icons/gi";
 import { BsHouseDoor, BsChat, BsClock } from "react-icons/bs";
-import { FaRegBuilding } from "react-icons/fa";
+import { FaRegBuilding, FaQuestion, FaCandyCane } from "react-icons/fa";
 import { TiBusinessCard } from "react-icons/ti";
-import { RiRainbowLine } from "react-icons/ri";
-import { ImEye } from "react-icons/im";
-import { CgMagnet } from "react-icons/cg";
+import { RiRainbowLine, RiAliensLine } from "react-icons/ri";
+import { ImEye, ImSad } from "react-icons/im";
+import { CgMagnet, CgKey } from "react-icons/cg";
 import { SiLetterboxd } from "react-icons/si";
+import { AiOutlineThunderbolt } from "react-icons/ai";
 
 import { Dice, DiceCollection, DiceFace } from "./styles";
 
@@ -90,6 +103,30 @@ const diceList = [
     <GiPadlock key="3" />,
     <SiLetterboxd key="4" />,
     <GiFlame key="5" />,
+  ],
+  [
+    <GiFlatfish key="0" />,
+    <GiPentarrowsTornado key="1" />,
+    <GiLockSpy key="2" />,
+    <GiFireFlower key="3" />,
+    <GiDramaMasks key="4" />,
+    <GiParachute key="5" />,
+  ],
+  [
+    <GiRainbowStar key="0" />,
+    <FaQuestion key="1" />,
+    <GiWaterFountain key="2" />,
+    <ImSad key="3" />,
+    <GiCampingTent key="4" />,
+    <CgKey key="5" />,
+  ],
+  [
+    <GiCandlestickPhone key="0" />,
+    <GiArrowhead key="1" />,
+    <GiScales key="2" />,
+    <AiOutlineThunderbolt key="3" />,
+    <RiAliensLine key="4" />,
+    <FaCandyCane key="5" />,
   ],
 ];
 
