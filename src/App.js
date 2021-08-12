@@ -130,20 +130,18 @@ const diceList = [
   ],
 ];
 
+const diceFacesRenderer = (dice, i) => (
+  <Dice key={`dice-${i}`}>
+    {dice.map((face, j) => (
+      <DiceFace key={`face-${j}`} number={`face-${j}`}>
+        {face}
+      </DiceFace>
+    ))}
+  </Dice>
+);
+
 function App() {
-  return (
-    <DiceCollection>
-      {diceList.map((dice, i) => (
-        <Dice key={`dice-${i}`}>
-          {dice.map((face, j) => (
-            <DiceFace key={`face-${j}`} number={`face-${j}`}>
-              {face}
-            </DiceFace>
-          ))}
-        </Dice>
-      ))}
-    </DiceCollection>
-  );
+  return <DiceCollection>{diceList.map(diceFacesRenderer)}</DiceCollection>;
 }
 
 export default App;
