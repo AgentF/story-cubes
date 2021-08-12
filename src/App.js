@@ -1,7 +1,12 @@
 import React from "react";
 
 import { IoMdGlobe } from "react-icons/io";
-import { IoBulbOutline, IoFlashlightOutline } from "react-icons/io5";
+import {
+  IoBulbOutline,
+  IoFlashlightOutline,
+  IoMoonOutline,
+  IoHandLeftOutline,
+} from "react-icons/io5";
 import { ImSleepy, ImSmile } from "react-icons/im";
 import {
   GiBranchArrow,
@@ -10,15 +15,32 @@ import {
   GiFruitTree,
   GiGreatPyramid,
   GiWhiteTower,
+  GiFairyWand,
+  GiBee,
+  GiRopeBridge,
+  GiAbacus,
+  GiSpellBook,
+  GiTurtle,
+  GiGoldScarab,
+  GiSlime,
+  GiMagnifyingGlass,
+  GiPerspectiveDiceSixFacesThree,
+  GiSheep,
+  GiFootprint,
+  GiPadlock,
+  GiFlame,
 } from "react-icons/gi";
 import { BsHouseDoor, BsChat, BsClock } from "react-icons/bs";
 import { FaRegBuilding } from "react-icons/fa";
 import { TiBusinessCard } from "react-icons/ti";
 import { RiRainbowLine } from "react-icons/ri";
 import { ImEye } from "react-icons/im";
+import { CgMagnet } from "react-icons/cg";
+import { SiLetterboxd } from "react-icons/si";
+
+import { Dice, DiceCollection, DiceFace } from "./styles";
 
 import "./App.css";
-import { Dice, DiceCollection, DiceFace } from "./styles";
 
 const diceList = [
   [
@@ -44,6 +66,30 @@ const diceList = [
     <RiRainbowLine key="3" />,
     <ImEye key="4" />,
     <GiWhiteTower key="5" />,
+  ],
+  [
+    <GiFairyWand key="0" />,
+    <GiBee key="1" />,
+    <GiRopeBridge key="2" />,
+    <GiAbacus key="3" />,
+    <IoMoonOutline key="4" />,
+    <GiSpellBook key="5" />,
+  ],
+  [
+    <IoHandLeftOutline key="0" />,
+    <GiTurtle key="1" />,
+    <GiGoldScarab key="2" />,
+    <GiSlime key="3" />,
+    <GiMagnifyingGlass key="4" />,
+    <GiPerspectiveDiceSixFacesThree key="5" />,
+  ],
+  [
+    <GiSheep key="0" />,
+    <CgMagnet key="1" />,
+    <GiFootprint key="2" />,
+    <GiPadlock key="3" />,
+    <SiLetterboxd key="4" />,
+    <GiFlame key="5" />,
   ],
 ];
 
