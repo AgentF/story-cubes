@@ -1,6 +1,22 @@
 import styled from "styled-components";
 
+export const PlayButton = styled.button`
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  background-color: #499f68;
+  color: white;
+  border-radius: 100%;
+  border: none;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5rem;
+`;
+
 export const DiceCollection = styled.div`
+  box-sizing: border-box;
   padding: 1rem;
   display: grid;
   gap: 1rem;
@@ -9,7 +25,7 @@ export const DiceCollection = styled.div`
 `;
 
 export const Dice = styled.ul`
-  --diceSize: 15rem;
+  --diceSize: 12rem;
   padding: 0;
   margin: 0;
   list-style: none;
@@ -32,4 +48,19 @@ export const DiceFace = styled.li`
   justify-content: center;
   align-items: center;
   grid-area: ${({ number }) => number};
+`;
+
+export const RolledDice = styled.ul`
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  --diceSize: 20rem;
+  padding: 0.5rem;
+  margin: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, calc(var(--diceSize) / 3));
+  grid-template-rows: repeat(3, calc(var(--diceSize) / 3));
+  gap: 0.25rem;
+  place-content: center;
 `;

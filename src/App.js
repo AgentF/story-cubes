@@ -1,23 +1,23 @@
-import React from "react";
-import { Dice, DiceCollection, DiceFace } from "./styles";
+import React, { useState } from "react";
 import { originalCollection } from "./oiginalCollection";
+import { DicesOverview } from "./DicesOverview.jsx";
+import { DicesRolling } from "./DicesRolling";
+import { PlayButton } from "./styles";
+import { BsFillPlayFill } from "react-icons/bs";
+import { AiOutlineArrowLeft } from "react-icons/ai";
 
-const diceFace = (face, i) => (
-  <DiceFace key={`face-${i}`} number={`face-${i}`}>
-    {face}
-  </DiceFace>
-);
-
-const diceFaceList = (dice, i) => (
-  <Dice key={`dice-${i}`}>{dice.map(diceFace)}</Dice>
-);
-
-const DiceCollectionWrapper = () => (
-  <DiceCollection>{originalCollection.map(diceFaceList)}</DiceCollection>
-);
-
-export const App = () => (
-  <>
-    <DiceCollectionWrapper />
-  </>
-);
+export const App = () => {
+  const [state, setState] = useState(false);
+  return (
+    <>
+      {state ? (
+        <DicesOverview dices={originalCollection} />
+      ) : (
+        <DicesRolling dices={originalCollection} />
+      )}
+      <PlayButton onClick={() => setState(!state)}>
+        {state ? <BsFillPlayFill /> : <AiOutlineArrowLeft />}
+      </PlayButton>
+    </>
+  );
+};
