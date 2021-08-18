@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/story-cubes/static/css/main.714dd5e5.chunk.css",
-    "main.js": "/story-cubes/static/js/main.5923a1af.chunk.js",
-    "main.js.map": "/story-cubes/static/js/main.5923a1af.chunk.js.map",
+    "main.js": "/story-cubes/static/js/main.96d968fc.chunk.js",
+    "main.js.map": "/story-cubes/static/js/main.96d968fc.chunk.js.map",
     "runtime-main.js": "/story-cubes/static/js/runtime-main.5bf662d8.js",
     "runtime-main.js.map": "/story-cubes/static/js/runtime-main.5bf662d8.js.map",
     "static/js/2.7d909f5f.chunk.js": "/story-cubes/static/js/2.7d909f5f.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.5bf662d8.js",
     "static/js/2.7d909f5f.chunk.js",
     "static/css/main.714dd5e5.chunk.css",
-    "static/js/main.5923a1af.chunk.js"
+    "static/js/main.96d968fc.chunk.js"
   ]
 }
